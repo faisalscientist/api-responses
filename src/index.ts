@@ -39,7 +39,7 @@ export class AppResponse {
 
   private response(code: string, message: string, data: any = [], meta: any = []){
     const responseJson = {code, message, data, meta};
-    if(!meta){
+    if(meta.length <= 0){
       delete responseJson['meta'];
     }
     return responseJson;

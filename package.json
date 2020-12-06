@@ -1,11 +1,12 @@
 {
   "name": "api-responses",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Application API Responses",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "pack": "npm run build && npm publish",
     "test": "mocha -r ts-node/register test/**/test.ts"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import AppResponse from '../src';
+import {AppResponse} from '../src';
 
 const response = new AppResponse();
 describe('Api Response Tests', () => {

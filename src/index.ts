@@ -1,4 +1,4 @@
-export default class AppResponse {
+export class AppResponse {
   public success = (data: any = [], meta: any = [], message: string = 'Operation Successful') => {
     return this.response('200', message, data, meta);
   }

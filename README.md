@@ -1,77 +1,78 @@
-# App Logging
+# Api Responses
 
-app-logging is a javascript log package that helps you write logs in your application. The logs are stored in a storage folder by default in the root of your application.
+api-responses is a javascript package that returns you responses in a readable format when building RESTApis.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/package/app-logging) to install app-logging.
+Use the package manager [npm](https://www.npmjs.com/package/api-responses) to install api-responses.
 
 ```bash
-npm install app-logging
+npm i api-responses
 ```
 
 ## Usage
 
+### Import
+
 ```python
-const AppLog = require('app-logging').Log;
+const AppResponse = require('api-responses').AppResponse;
+## Typescript
+import { AppResponse } from 'api-responses'
 
-const log = new AppLog();
+## Initialization
+const response = new AppResponse();
 
-# Writing Info Logs
-log.info('info message', 'contextual-data');
-
-# Writing Error Logs
-log.error('error message', 'contextual-data');
-
-# Writing Debug Logs
-log.info('debug message', 'contextual-data');
-
-# Writing Warning Logs
-log.info('warning message', 'contextual-data');
-
-# Writing Critical Logs
-log.info('critical message', 'contextual-data');
-
-# Writing Emergency Logs
-log.info('emergency message', 'contextual-data');
-
-# Writing Notice Logs
-log.info('notice message', 'contextual-data');
-
-# Writing Alert Logs
-log.info('alert message', 'contextual-data');
 ```
 
-### With TypeScript
-
 ```python
-import { Log } from 'app-logging'
+# success(data: optional, meta: optional, message: optional)
+response.success();
+# {code: '200', message: 'Operation Successful', data: [}, meta: [] }
 
-const log = new Log();
+# validationError(data: optional, meta: optional, message: optional)
+response.validationError();
+# {code: '400', message: 'Validation Error', data: [}, meta: [] }
 
-# Writing Info Logs
-log.info('info message', 'contextual-data');
+# forbidden(data: optional, meta: optional, message: optional)
+response.forbidden();
+# {code: '403', message: 'Forbidden', data: [}, meta: [] }
 
-# Writing Error Logs
-log.error('error message', 'contextual-data');
+# unauthorized(data: optional, meta: optional, message: optional)
+response.unauthorized();
+# {code: '401', message: 'Unauthorized Access', data: [}, meta: [] }
 
-# Writing Debug Logs
-log.info('debug message', 'contextual-data');
+# notFound(data: optional, meta: optional, message: optional)
+response.notFound();
+# {code: '404', message: 'Not Found', data: [}, meta: [] }
 
-# Writing Warning Logs
-log.info('warning message', 'contextual-data');
+# methodNotAllowed(data: optional, meta: optional, message: optional)
+response.methodNotAllowed();
+# {code: '405', message: 'Method Not Allowed', data: [}, meta: [] }
 
-# Writing Critical Logs
-log.info('critical message', 'contextual-data');
+# tooManyRequest(data: optional, meta: optional, message: optional)
+response.tooManyRequest();
+# {code: '429', message: 'Too Many Requests', data: [}, meta: [] }
 
-# Writing Emergency Logs
-log.info('emergency message', 'contextual-data');
+# serverError(data: optional, meta: optional, message: optional)
+response.serverError();
+# {code: '500', message: 'Server Error', data: [}, meta: [] }
 
-# Writing Notice Logs
-log.info('notice message', 'contextual-data');
+# unavailable(data: optional, meta: optional, message: optional)
+response.unavailable();
+# {code: '503', message: 'Unavailable', data: [}, meta: [] }
 
-# Writing Alert Logs
-log.info('alert message', 'contextual-data');
+# timedOut(data: optional, meta: optional, message: optional)
+response.timedOut();
+# {code: '504', message: 'Timed-Out', data: [}, meta: [] }
+
+# badGateway(data: optional, meta: optional, message: optional)
+response.badGateway();
+# {code: '502', message: 'Bad Gateway', data: [}, meta: [] }
+
+# other(code: required, data: optional, meta: optional, message: optional)
+response.other('212');
+# {code: '212', message: 'Other Response', data: [}, meta: [] }
+
 ```
 
 ## Contributing

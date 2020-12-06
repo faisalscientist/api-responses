@@ -179,4 +179,13 @@ describe('Api Response Tests', () => {
       expect(message).to.equal('Bad Gateway Response');
     });
   })
+  describe('Other Response', () => {
+    it('should return default response information when params are passed to other', () => {
+      const {code, data, meta, message} = response.other('212');
+      expect(code).to.equal('212');
+      expect(data.length).to.equal(0);
+      expect(meta.length).to.equal(0);
+      expect(message).to.equal('Bad Gateway');
+    });
+  })
 });

@@ -33,6 +33,10 @@ export class AppResponse {
     return this.response('502', message, data, meta);
   }
 
+  public other = (code: string, data: any = [], meta: any = [], message: string = 'Bad Gateway') => {
+    return this.response(code, message, data, meta);
+  }
+
   private response(code: string, message: string, data: any = [], meta: any = []){
     return {code, message, data, meta};
   }

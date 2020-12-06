@@ -25,47 +25,47 @@ const response = new AppResponse();
 ```
 
 ```python
-# success(data: optional, meta: optional, message: optional)
+# success(message: optional, data: optional, meta: optional)
 response.success();
 # {code: '200', message: 'Operation Successful', data: [}, meta: [] }
 
-# validationError(data: optional, meta: optional, message: optional)
+# validationError(message: optional, data: optional, meta: optional)
 response.validationError();
 # {code: '400', message: 'Validation Error', data: [}, meta: [] }
 
-# forbidden(data: optional, meta: optional, message: optional)
+# forbidden(message: optional, data: optional, meta: optional)
 response.forbidden();
 # {code: '403', message: 'Forbidden', data: [}, meta: [] }
 
-# unauthorized(data: optional, meta: optional, message: optional)
+# unauthorized(message: optional, data: optional, meta: optional)
 response.unauthorized();
 # {code: '401', message: 'Unauthorized Access', data: [}, meta: [] }
 
-# notFound(data: optional, meta: optional, message: optional)
+# notFound(message: optional, data: optional, meta: optional)
 response.notFound();
 # {code: '404', message: 'Not Found', data: [}, meta: [] }
 
-# methodNotAllowed(data: optional, meta: optional, message: optional)
+# methodNotAllowed(message: optional, data: optional, meta: optional)
 response.methodNotAllowed();
 # {code: '405', message: 'Method Not Allowed', data: [}, meta: [] }
 
-# tooManyRequest(data: optional, meta: optional, message: optional)
+# tooManyRequest(message: optional, data: optional, meta: optional)
 response.tooManyRequest();
 # {code: '429', message: 'Too Many Requests', data: [}, meta: [] }
 
-# serverError(data: optional, meta: optional, message: optional)
+# serverError(message: optional, data: optional, meta: optional)
 response.serverError();
 # {code: '500', message: 'Server Error', data: [}, meta: [] }
 
-# unavailable(data: optional, meta: optional, message: optional)
+# unavailable(message: optional, data: optional, meta: optional)
 response.unavailable();
 # {code: '503', message: 'Unavailable', data: [}, meta: [] }
 
-# timedOut(data: optional, meta: optional, message: optional)
+# timedOut(message: optional, data: optional, meta: optional)
 response.timedOut();
 # {code: '504', message: 'Timed-Out', data: [}, meta: [] }
 
-# badGateway(data: optional, meta: optional, message: optional)
+# badGateway(message: optional, data: optional, meta: optional)
 response.badGateway();
 # {code: '502', message: 'Bad Gateway', data: [}, meta: [] }
 

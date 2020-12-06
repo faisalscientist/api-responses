@@ -38,6 +38,10 @@ export class AppResponse {
   }
 
   private response(code: string, message: string, data: any = [], meta: any = []){
-    return {code, message, data, meta};
+    const responseJson = {code, message, data, meta};
+    if(!meta){
+      delete responseJson['meta'];
+    }
+    return responseJson;
   }
 }
